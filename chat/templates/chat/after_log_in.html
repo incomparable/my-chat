@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} Чат {% endblock %}
+
+{% block body %}
+    <h1>Пользователи, с которыми можно начать чат</h1>
+    {% for i in users_list %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            <input name='hidden_receiver' type = 'hidden' value='{{ i }}'>
+            <input style="opacity: 0; position: absolute"
+                   class = 'btn btn-success'
+                   id="sub1"
+                   type= 'submit'
+                   value = 'отправить сообщение пользователю:'
+            formaction="/loged_in/">
+            <label for="sub1"><a href ="#">{{ i }}</a></label>
+    </form>
+
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Чат {% endblock %}
+
+{% block body %}
+
+<form  method="post">
+{% csrf_token %}
+        <input type="text" style="width:400px; height:50px" name="message1" placeholder="сообщение" size="40" height="40">
+        <br>
+         <button type="submit" formaction="/submit/">Отправить</button>
+     <input name='receiver_1' type = 'hidden' value={{ receiver }}>
+     <input name='creator_1' type = 'hidden' value={{user.username}}>
+</form>
+            {% for i in message %}
+           <p style="color:#398A93">FROM:{{i.creator}}| DATE:{{i.date}}</p><p>{{ i.message}}</p>
+    {% endfor %}
+
+
+
+{% endblock %}

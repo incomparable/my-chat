@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} Чат {% endblock %}
+
+{% block body %}
+    <form action="" method="post">
+    {% csrf_token %}
+     <input name="email" type="email" class="form-control" id="exampleInputPassword1" placeholder="email">
+     <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="password">
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+{% endblock %}
