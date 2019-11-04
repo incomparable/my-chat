@@ -14,5 +14,4 @@ class Message(models.Model):
         self.save()
         
 
-    def __str__(self):
-        return self.title
+  
